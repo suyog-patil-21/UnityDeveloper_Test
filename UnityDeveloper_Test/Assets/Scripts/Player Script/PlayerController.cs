@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
     var moveDir = cameraController.PlannerRotation * moveInput;
 
     GroundCheck();
+    
+
     Debug.Log("IsGrounded = "+ isGrounded);
     if(isGrounded) {
         ySpeed = -0.5f;
