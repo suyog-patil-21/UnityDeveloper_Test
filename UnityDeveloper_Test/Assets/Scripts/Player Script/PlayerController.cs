@@ -47,8 +47,12 @@ public class PlayerController : MonoBehaviour
 
     var moveDir = cameraController.PlannerRotation * moveInput;
 
-    GroundCheck();
-    
+    if(characterController.isGrounded && Input.GetKey(KeyCode.Space)){
+        Debug.Log("Space was pressed");
+
+        characterController.Move(new Vector3(0,0.8f,0));
+    }
+    GroundCheck();   
 
     Debug.Log("IsGrounded = "+ isGrounded);
     if(isGrounded) {
