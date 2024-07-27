@@ -12,12 +12,10 @@ public class TimerCounterScript : MonoBehaviour
 
     [SerializeField]
     TextMeshProUGUI timerText;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
+    [SerializeField]
+    GameOverScript gameOverScript;
+
     void Update()
     {
         if(timeRemaining > 0) {
@@ -26,6 +24,7 @@ public class TimerCounterScript : MonoBehaviour
         {
             timeRemaining = 0;
             timerText.color = Color.red;
+            gameOverScript.gameOver();
         }
          float minutes = Mathf.FloorToInt(timeRemaining / 60);
          float seconds = Mathf.FloorToInt(timeRemaining % 60);
